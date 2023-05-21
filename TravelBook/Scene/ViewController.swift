@@ -2,12 +2,18 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController {
   // MARK: IBOutlet
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var nameTF: UITextField!
+  @IBOutlet weak var commentTF: UITextField!
+  
   // MARK: Variables
   var locationManager = CLLocationManager()
+  var chosenLatitude = Double()
+  var chosenLongitude = Double()
   override func viewDidLoad() {
     super.viewDidLoad()
         getUsersLocation()
@@ -31,12 +37,39 @@ createGestureRecognizer()
     if gestureRecognizer.state == .began {
       let touchedPoint = gestureRecognizer.location(in: self.mapView)
       let touchedCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
+      chosenLatitude = touchedCoordinates.latitude
+      chosenLongitude = touchedCoordinates.longitude
       let annotation = MKPointAnnotation()
       annotation.coordinate = touchedCoordinates
-      annotation.title = "New Annotation"
-      annotation.subtitle = "Travel Book"
+      annotation.title = nameTF.text
+      annotation.subtitle = commentTF.text
       self.mapView.addAnnotation(annotation)
     }
+  }
+  
+  
+  @IBAction func saveButton(_ sender: Any) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    let newPlace = NSEntityDescription.insertNewObject(forEntityName: "Places", into: context)
+    if let title = nameTF.text, let subtitle = commentTF.text {
+      newPlace.setValue(title, forKey: "title")
+      newPlace.setValue(subtitle, forKey: "subtitle")
+      newPlace.setValue(UUID(), forKey: "id")
+      newPlace.setValue(chosenLatitude, forKey: "latitude")
+      newPlace.setValue(chosenLongitude, forKey: "longitude")
+      do {
+        try context.save()
+        print("Date Save Operation Succeed")
+      } catch {
+        print(error.localizedDescription)
+      }
+    } else {
+      self.popupAlert(title: "Notice", message: "Please enter name and comment", actionStyle: .default)
+    }
+    
+ 
+    
   }
 }
 
