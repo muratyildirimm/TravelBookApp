@@ -14,6 +14,8 @@
 		13EFB3732A19509200E77BE6 /* TravelBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13EFB3712A19509200E77BE6 /* TravelBook.xcdatamodeld */; };
 		13EFB3752A19509200E77BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13EFB3742A19509200E77BE6 /* Assets.xcassets */; };
 		13EFB3782A19509200E77BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13EFB3762A19509200E77BE6 /* LaunchScreen.storyboard */; };
+		13EFB3822A1A163000E77BE6 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFB3812A1A163000E77BE6 /* AlertModel.swift */; };
+		13EFB3842A1A191800E77BE6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFB3832A1A191800E77BE6 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		13EFB3742A19509200E77BE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13EFB3772A19509200E77BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13EFB3792A19509200E77BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13EFB3812A1A163000E77BE6 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		13EFB3832A1A191800E77BE6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 		13EFB3672A19509100E77BE6 /* TravelBook */ = {
 			isa = PBXGroup;
 			children = (
+				13EFB3802A1A162300E77BE6 /* Error */,
+				13EFB37F2A1A160E00E77BE6 /* Scene */,
 				13EFB3682A19509100E77BE6 /* AppDelegate.swift */,
 				13EFB36A2A19509100E77BE6 /* SceneDelegate.swift */,
-				13EFB36C2A19509200E77BE6 /* ViewController.swift */,
 				13EFB36E2A19509200E77BE6 /* Main.storyboard */,
 				13EFB3742A19509200E77BE6 /* Assets.xcassets */,
 				13EFB3762A19509200E77BE6 /* LaunchScreen.storyboard */,
@@ -68,6 +73,23 @@
 				13EFB3712A19509200E77BE6 /* TravelBook.xcdatamodeld */,
 			);
 			path = TravelBook;
+			sourceTree = "<group>";
+		};
+		13EFB37F2A1A160E00E77BE6 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				13EFB3832A1A191800E77BE6 /* FirstViewController.swift */,
+				13EFB36C2A19509200E77BE6 /* ViewController.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		13EFB3802A1A162300E77BE6 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				13EFB3812A1A163000E77BE6 /* AlertModel.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +166,8 @@
 				13EFB3732A19509200E77BE6 /* TravelBook.xcdatamodeld in Sources */,
 				13EFB36D2A19509200E77BE6 /* ViewController.swift in Sources */,
 				13EFB3692A19509100E77BE6 /* AppDelegate.swift in Sources */,
+				13EFB3842A1A191800E77BE6 /* FirstViewController.swift in Sources */,
+				13EFB3822A1A163000E77BE6 /* AlertModel.swift in Sources */,
 				13EFB36B2A19509100E77BE6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
